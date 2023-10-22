@@ -72,8 +72,8 @@ def update(id):
     
 @app.route('/listar', methods=['POST'])
 def list():
-    nome = request.form['nome']
-    energeticos = Energetico.query.filter(Energetico.nome.like(f'%{nome}%')).all()
+    marca = request.form['marca']
+    energeticos = Energetico.query.filter(Energetico.marca.like(f'%{marca}%')).all()
     return render_template("lista.html", energeticos = energeticos)
 
 if __name__ == '__main__':

@@ -1,0 +1,28 @@
+body {
+    background-color: #e8e8e8;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    columns: 3;
+}
+
+.card {
+    --gray: rgba(229, 231, 235, 1);
+    width: 400px;
+    height: auto;
+    display: flex;
+    grid-gap: 1.25rem;
+    gap: 1.25rem;
+    border-radius: 1rem;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 1.5rem;
+}
+
+.lista {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    transition: transform 0.4s ease;
+
+}
