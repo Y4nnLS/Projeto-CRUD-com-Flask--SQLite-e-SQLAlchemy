@@ -62,8 +62,10 @@ def delete(id):
 def update(id):
     if request.method == 'POST':
         novo_sabor = request.form['novo_sabor']
+        novo_nome = request.form['novo_nome']
         energetico  = Energetico.query.get(id)
         energetico.sabor = novo_sabor
+        energetico.nome = novo_nome
         db.session.commit()
         return redirect(url_for('index'))
     else:
@@ -73,8 +75,12 @@ def update(id):
 @app.route('/listar', methods=['POST'])
 def list():
     marca = request.form['marca']
+    if marca:
+        titulo = f'Energeticos da marca {marca}'
+    else:
+        titulo = 'Todos os energéticos'
     energeticos = Energetico.query.filter(Energetico.marca.like(f'%{marca}%')).all()
-    return render_template("lista.html", energeticos = energeticos)
+    return render_template("lista.html", energeticos = energeticos, titulo = titulo)
 
 if __name__ == '__main__':
     app.run(debug = True)
