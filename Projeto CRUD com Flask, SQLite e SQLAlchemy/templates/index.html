@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cu Pinto Bosta Mijo</title>
+</head>
+<body>
+    <h1>Energeticos</h1>
+
+        <ul>
+            {% for energetico in energeticos %}
+            <li>{{ energetico.marca }}:{{ energetico.nome}} - {{energetico.sabor}} ( {{ energetico.tamanho_lata }}ml [R${{energetico.preco}}])</li>
+            <a href="/excluir/{{ energetico.id }}">excluir</a>
+            <a href="/atualizar/{{ energetico.id }}">Atualizar</a>
+            {% endfor %}
+        </ul>
+
+    <h2>Inserir Energetico</h2>
+    <form method="POST" action="/inserir">
+        <label for="nome">Nome: </label>
+        <input type="text" name="nome"><br>
+        <label for="tamanho_lata">Tamanho da lata:</label>
+        <input type="number" name="tamanho_lata"><br>
+        <label for="sabor">Sabor:</label>
+        <input type="text" name="sabor"><br>
+        <label for="marca">Marca:</label>
+        <input type="text" name="marca"><br>
+        <label for="preco">Preço:</label>
+        <input type="float" name="preco"><br>
+        <input type="submit" value="Inserir">
+    </form>
+
+    <h2>Listar pelo nome</h2>
+    <form method="POST" action="/listar">
+        <label for="nome">nome</label>
+        <input type="text" name="nome"><br>
+        <input type="submit" value="Inserir">
+    </form>
+        
+</body>
+</html>

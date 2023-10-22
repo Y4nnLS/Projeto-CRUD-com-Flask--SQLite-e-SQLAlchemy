@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Energeticos</h1>
+    <ul>
+        {% for energetico in energeticos %}
+        <li>{{ energetico.marca }}:{{ energetico.nome}} - {{energetico.sabor}} ( {{ energetico.tamanho_lata }}ml [{{energetico.preco}}])</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
