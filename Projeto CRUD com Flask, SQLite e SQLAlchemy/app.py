@@ -63,9 +63,11 @@ def update(id):
     if request.method == 'POST':
         novo_sabor = request.form['novo_sabor']
         novo_nome = request.form['novo_nome']
+        novo_preco = request.form['novo_preco']
         energetico  = Energetico.query.get(id)
         energetico.sabor = novo_sabor
         energetico.nome = novo_nome
+        energetico.preco = novo_preco
         db.session.commit()
         return redirect(url_for('index'))
     else:
