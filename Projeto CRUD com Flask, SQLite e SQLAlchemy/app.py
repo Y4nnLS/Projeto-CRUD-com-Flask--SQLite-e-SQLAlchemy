@@ -12,7 +12,7 @@ print(base_dir)
 class Energetico(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nome = db.Column(db.Text)
-    tamanho_lata = db.Column(db.Integer)  # Make sure this line is present
+    tamanho_lata = db.Column(db.Integer)
     sabor = db.Column(db.Text)
     marca = db.Column(db.Text)
     preco = db.Column(db.Float)
