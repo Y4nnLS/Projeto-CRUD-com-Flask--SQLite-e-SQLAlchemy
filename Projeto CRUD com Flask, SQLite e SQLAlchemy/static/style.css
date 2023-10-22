@@ -6,7 +6,7 @@ body {
     columns: 3;
 }
 
-.card {
+.card__listar, .card__inserir, .card__buscar{
     --gray: rgba(229, 231, 235, 1);
     width: 400px;
     height: auto;
@@ -21,8 +21,33 @@ body {
 .lista {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
     transition: transform 0.4s ease;
+}
 
+.input-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+.input-box{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+}
+
+input{
+    background-color: #eee;
+    border: none;
+    margin: 8px 0;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 8px;
+    width: 100%;
+    outline: none;
+}
+
+input:hover{
+    background-color: #c9c8c8;
 }

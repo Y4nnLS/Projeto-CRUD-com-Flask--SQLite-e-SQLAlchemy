@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="card">
+    <div class="card__listar">
         <div class='lista'>
             <h1>Energeticos</h1>
             <ul>
@@ -19,36 +19,41 @@
                     [R${{energetico.preco}}])</li>
                 <a href="/excluir/{{ energetico.id }}">excluir</a>
                 <a href="/atualizar/{{ energetico.id }}">Atualizar</a>
+                <br>
+                <br>
                 {% endfor %}
             </ul>
         </div>
     </div>
-    <div class="card">
+    <div class="card__inserir">
         <div class='lista'>
             <h2>Inserir Energetico</h2>
             <form method="POST" action="/inserir">
-                <label for="nome">Nome: </label>
-                <input type="text" name="nome"><br>
-                <label for="tamanho_lata">Tamanho da lata:</label>
-                <input type="number" name="tamanho_lata"><br>
-                <label for="sabor">Sabor:</label>
-                <input type="text" name="sabor"><br>
-                <label for="marca">Marca:</label>
-                <input type="text" name="marca"><br>
-                <label for="preco">Preço:</label>
-                <input type="float" name="preco"><br>
-                <input type="submit" value="Inserir">
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="marca">Marca:</label>
+                        <input type="text" name="marca"><br>
+                        <label for="nome">Nome: </label>
+                        <input type="text" name="nome"><br>
+                        <label for="sabor">Sabor:</label>
+                        <input type="text" name="sabor"><br>
+                        <label for="tamanho_lata">Tamanho da lata:</label>
+                        <input type="number" name="tamanho_lata"><br>
+                        <label for="preco">Preço:</label>
+                        <input type="number" name="preco"><br>
+                        <input type="submit" value="Inserir">
+                    </div>
+                </div>
             </form>
         </div>
     </div>
-    <div class="card">
+    <div class="card__buscar">
         <div class='lista'>
-            <h2>Listar pela marca
-            </h2>
+            <h2>Listar pela marca</h2>
             <form method="POST" action="/listar">
                 <label for="marca">marca</label>
                 <input type="text" name="marca"><br>
-                <input type="submit" value="Inserir">
+                <input type="submit" value="Buscar">
             </form>
         </div>
     </div>
