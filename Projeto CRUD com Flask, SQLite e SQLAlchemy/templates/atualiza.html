@@ -12,7 +12,7 @@
 <body>
     <div class="card__listar">
         <div class='lista'>
-            <h1>Atualiza o sabor de {{ energetico.sabor }}</h1>
+            <h1>Atualiza o sabor de {{ energetico.marca }}: {{ energetico.sabor }}</h1>
             <form method="POST">
                 <label for="novo_sabor">Novo sabor</label>
                 <input type="text" name="novo_sabor" value="{{ energetico.sabor }}"><br>
